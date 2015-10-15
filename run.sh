@@ -1,5 +1,6 @@
 #!/bin/sh
 
+echo "starting..."
 exec java -ea -Dsecor.kafka.group=${SECOR_GROUP} \
     -Daws.access.key=${AWS_ACCESS_KEY} \
     -Daws.secret.key=${AWS_SECRET_KEY} \
