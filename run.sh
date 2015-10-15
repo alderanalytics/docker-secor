@@ -1,6 +1,7 @@
 #!/bin/sh
 
-echo "starting..."
+SECOR_JAR=$(ls secor-*-SNAPSHOT.jar)
+
 exec java -ea -Dsecor.kafka.group=${SECOR_GROUP} \
     -Daws.access.key=${AWS_ACCESS_KEY} \
     -Daws.secret.key=${AWS_SECRET_KEY} \
@@ -10,5 +11,5 @@ exec java -ea -Dsecor.kafka.group=${SECOR_GROUP} \
     -Dsecor.s3.path=${S3_PATH} \
     -Dlog4j.configuration=log4j.prod.properties \
     -Dconfig=secor.prod.backup.properties \
-    -cp secor-0.1-SNAPSHOT.jar:lib/* \
+    -cp ${SECOR_JAR}:lib/* \
     com.pinterest.secor.main.ConsumerMain
