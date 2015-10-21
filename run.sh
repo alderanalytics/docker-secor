@@ -18,4 +18,5 @@ exec java -ea -Dsecor.kafka.group=${SECOR_GROUP} \
     -Dlog4j.configuration=log4j.prod.properties \
     -Dconfig=${SECOR_BASE_CONFIG} \
     -cp ${SECOR_JAR}:lib/* \
+    "$@" \
     com.pinterest.secor.main.ConsumerMain
